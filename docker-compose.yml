@@ -1,0 +1,24 @@
+version: "3.7"
+
+services:
+    basex:
+        image: basex/basexhttp:9.x
+        volumes:
+        - type: volume
+            source: basexdata
+            target: srv/basex/data
+        - type: volume
+            source: basexrepo
+            target: srv/basex/repo
+        - type: volume
+            source: basexweb
+            target: srv/basex/webapp
+        ports:
+            - "1984:1984"
+            - "8984:8984"
+
+volumes:
+    basexdata
+    basexrepo
+    basexweb
+

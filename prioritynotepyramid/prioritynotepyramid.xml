@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<prioritynotepyramid>
+    <top-note>
+        <title></title>
+        <description></description>
+        <shoot-for-date></shoot-for-date>
+        <due-date></due-date>
+        <finish-date></finish-date>
+        <overrun></overrun>
+    </top-note>
+    <level>
+        <level-number></level-number>
+        <title></title>
+        <note-block>
+            <title></title>
+            <description></description>
+            <shoot-for-date></shoot-for-date>
+            <due-date></due-date>
+            <finish-date></finish-date>
+            <overrun></overrun>
+            <dependencies></dependencies>
+        </note-block>
+    </level>
+</prioritynotepyramid>

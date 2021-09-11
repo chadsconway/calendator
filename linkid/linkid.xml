@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<linkid>
+    <primary>
+        <uuidv4>String</uuidv4>
+    </primary>
+    <prefix>String</prefix>
+    <descriptor>String</descriptor>
+    <suffix>String</suffix>
+    <secondaries>
+        <uuidv4>String</uuidv4>
+    </secondaries>
+    <created>
+        <timelog></timelog>
+    </created>
+</linkid>

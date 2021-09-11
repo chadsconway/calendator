@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<master-timeclock>
+    <title></title>
+    <description></description>
+    <timelog>
+        <timestamp></timestamp>
+        <punch-in></punch-in>
+        <punch-out></punch-out>
+        <transaction-id-ref></transaction-id-ref>
+        <adjustment>
+            <timelog>
+                <timestamp>
+                    <transaction-adjustment-ref></transaction-adjustment-ref>
+                </timestamp>
+            </timelog>
+        </adjustment>
+    </timelog>
+</master-timeclock>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<timelog>
+    <timestamp>ms since epoch integer</timestamp>
+    <punch-in>boolean</punch-in>
+    <punch-out>boolean</punch-out>
+    <transaction-id-ref>string</transaction-id-ref>
+    <linkid></linkid>
+</timelog>

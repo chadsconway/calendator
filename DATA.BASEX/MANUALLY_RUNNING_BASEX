@@ -1,0 +1,37 @@
+docker run -ti \
+    --name basexhttp \
+    --publish 1984:1984 \
+    --publish 8984:8984 \
+    --volume "$(pwd)/basex/data":/srv/basex/data \
+    basex/basexhttp:latest
+
+THEN CONNECT A CLIENT:
+
+docker run -ti \
+    --link basexhttp:basexhttp \
+    basex/basexhttp:latest basexclient -nbasexhttp
+
+NON-PRIVILEGED USER:
+
+BaseX is run under the basex user with fixed user ID 1984. The user’s home directory is /srv. 
+
+In production use nginx proxy in front of app container
+
+BUILDING YOUR OWN IMAGE:
+
+FROM basex/basexhttp:latest
+MAINTAINER BaseX Team <basex-talk@mailman.uni-konstanz.de>
+COPY . /srv/basex/webapp
+
+SETTING CONFIGURATION:
+add .basex file to /srv
+
+COPY .basex /srv/basex
+
+OPTIONS NOT DEFINED IN .basex WILL USE DEFAULTS
+
+INSTALLING ADDITIONAL PACKAGES, FETCH PACKAGE CATALOG IN alpine linux WITH apk update:
+
+USER root
+RUN apk update && apk add --no-cache git
+USER basex

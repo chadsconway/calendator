@@ -1,0 +1,6 @@
+<xs:string></xs:string>
+<xs:decimal></xs:decimal>
+<xs:integer></xs:integer>
+<xs:boolean></xs:boolean>
+<xs:date></xs:date>
+<xs:time></xs:time>

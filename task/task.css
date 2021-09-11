@@ -1,0 +1,44 @@
+:root {
+  --ndc-grid-template-1__grid-template-rows: 1fr 1fr;
+
+  /* ^ rows repeat vars - number of rows and height */
+  --ndc-grid-template-1__num-of-rows: 5;
+  --ndc-grid-template-1__height-rows: 100px;
+
+  --ndc-grid-template-1__grid-template-rows: repeat(
+    var(--ndc-grid-template-1__num-of-rows),
+    var(--ndc-grid-template-1__height-rows)
+  );
+
+  /* ^ columns repeat(num-of-cols, width-cols) */
+  --ndc-grid-template-1__num-of-cols: 2;
+  --ndc-grid-template-1__height-cols: 30vw;
+
+  --ndc-grid-template-1__grid-template-cols: repeat(
+    var(--ndc-grid-template-1__num-of-cols),
+    var(--ndc-grid-template-1__height-cols)
+  );
+
+  /* ^ areas each row an individual string */
+  --ndc-grid-template-1__grid-template-areas: "a1  b1" "a2 b2" "a3 b3" "a4 b4"
+    "a5 b5";
+
+  /*  ^ border-1 */
+  --ndc-grid-template-1__border-1: 2px solid black;
+}
+.ndc-display__grid {
+  display: grid;
+}
+.ndc-grid__template-1 {
+  grid-template-columns: var(ndc-grid-template-1__grid-template-cols);
+  grid-template-rows: var(--ndc-grid-template-1__grid-template-rows);
+  grid-template-areas: var(--ndc-grid-template-1__grid-template-areas);
+}
+.a1 {
+  grid-area: a1;
+  border: var(--ndc-grid-template-1__border-1);
+}
+.b1 {
+  grid-area: b1;
+  border: var(--ndc-grid-template-1__border-1);
+}

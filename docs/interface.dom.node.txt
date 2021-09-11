@@ -1,0 +1,97 @@
+node . nodeType
+
+    Returns a number appropriate for the type of node, as follows:
+
+    Element
+        Node . ELEMENT_NODE (1). 
+    Attr
+        Node . ATTRIBUTE_NODE (2). 
+    An exclusive Text node
+        Node . TEXT_NODE (3). 
+    CDATASection
+        Node . CDATA_SECTION_NODE (4). 
+    ProcessingInstruction
+        Node . PROCESSING_INSTRUCTION_NODE (7). 
+    Comment
+        Node . COMMENT_NODE (8). 
+    Document
+        Node . DOCUMENT_NODE (9). 
+    DocumentType
+        Node . DOCUMENT_TYPE_NODE (10). 
+    DocumentFragment
+        Node . DOCUMENT_FRAGMENT_NODE (11). 
+
+node . nodeName
+
+    Returns a string appropriate for the type of node, as follows:
+
+    Element
+        Its HTML-uppercased qualified name. 
+    Attr
+        Its qualified name. 
+    An exclusive Text node
+        "#text". 
+    CDATASection
+        "#cdata-section". 
+    ProcessingInstruction
+        Its target. 
+    Comment
+        "#comment". 
+    Document
+        "#document". 
+    DocumentType
+        Its name. 
+    DocumentFragment
+        "#document-fragment". 
+
+node . isConnected
+
+    Returns true if node is connected; otherwise false.
+node . ownerDocument
+    Returns the node document. Returns null for documents. 
+node . getRootNode()
+    Returns node’s root. 
+node . getRootNode({ composed:true })
+    Returns node’s shadow-including root. 
+node . parentNode
+    Returns the parent. 
+node . parentElement
+    Returns the parent element. 
+node . hasChildNodes()
+    Returns whether node has children. 
+node . childNodes
+    Returns the children. 
+node . firstChild
+    Returns the first child. 
+node . lastChild
+    Returns the last child. 
+node . previousSibling
+    Returns the previous sibling. 
+node . nextSibling
+    Returns the next sibling. 
+
+    node . compareDocumentPosition(other)
+    Returns a bitmask indicating the position of other relative to node. These are the bits that can be set:
+
+    Node . DOCUMENT_POSITION_DISCONNECTED (1)
+        Set when node and other are not in the same tree. 
+    Node . DOCUMENT_POSITION_PRECEDING (2)
+        Set when other is preceding node. 
+    Node . DOCUMENT_POSITION_FOLLOWING (4)
+        Set when other is following node. 
+    Node . DOCUMENT_POSITION_CONTAINS (8)
+        Set when other is an ancestor of node. 
+    Node . DOCUMENT_POSITION_CONTAINED_BY (16, 10 in hexadecimal)
+        Set when other is a descendant of node. 
+
+node . contains(other)
+    Returns true if other is an inclusive descendant of node; otherwise false. 
+
+These are the constants compareDocumentPosition() returns as mask:
+
+    DOCUMENT_POSITION_DISCONNECTED (1);
+    DOCUMENT_POSITION_PRECEDING (2);
+    DOCUMENT_POSITION_FOLLOWING (4);
+    DOCUMENT_POSITION_CONTAINS (8);
+    DOCUMENT_POSITION_CONTAINED_BY (16, 10 in hexadecimal);
+    DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC (32, 20 in hexadecimal). 

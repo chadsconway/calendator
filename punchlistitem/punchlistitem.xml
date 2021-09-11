@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<punchlistitem>
+    <title></title>
+    <description></description>
+    <linkid></linkid>
+    <punchlist></punchlist>
+    <completed></completed>
+    <inprogress></inprogress>
+    <currentsprint></currentsprint>
+    <ondeck></ondeck>
+    <frozen></frozen>
+    <feature></feature>
+</punchlistitem>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<calendarblock>
+<day-3-part>
+    <am>boolean</am>
+    <pm>boolean</pm>
+    <eve>boolean</eve>
+</day-3-part>
+<am-block-hour-slots>
+    <hour-0>
+        <slottable></slottable>
+    </hour-0>
+    <hour-1>
+        <slottable></slottable>
+    </hour-1>
+    <hour-2>
+        <slottable></slottable>
+    </hour-2>
+    <hour-3>
+        <slottable></slottable>
+    </hour-3>
+</am-block-hour-slots>
+<pm-block-hour-slots>
+    <hour-0>
+        <slottable></slottable>
+    </hour-0>
+    <hour-1>
+        <slottable></slottable>
+    </hour-1>
+    <hour-2>
+        <slottable></slottable>
+    </hour-2>
+    <hour-3>
+        <slottable></slottable>
+    </hour-3>
+</pm-block-hour-slots>
+<eve-block-hour-slots>
+    <hour-0>
+        <slottable></slottable>
+    </hour-0>
+    <hour-1>
+        <slottable></slottable>
+    </hour-1>
+    <hour-2>
+        <slottable></slottable>
+    </hour-2>
+    <hour-3>
+        <slottable></slottable>
+    </hour-3>
+</eve-block-hour-slots>
+</calendarblock>

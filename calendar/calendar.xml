@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<calendar name="calendar-title">
+    <year></year>
+        <months>
+            <month>
+                <days>
+                    <day>
+                        <day-of-month></day-of-month>
+                        <day-of-week></day-of-week>
+                        <block-links>
+                            <linkid></linkid>
+                        </block-links>
+                    </day>
+                </days>
+                <weeks>
+                    <epoch-week-number></epoch-week-number>
+                    <days>
+                        <linkid></linkid>
+                    </days>
+                </weeks>
+            </month>        
+        </months>
+</calendar>

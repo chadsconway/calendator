@@ -1,0 +1,350 @@
+Interface Document
+
+[Exposed=Window]
+interface Document : Node {
+  constructor();
+
+  [SameObject] readonly attribute DOMImplementation implementation;
+  readonly attribute USVString URL;
+  readonly attribute USVString documentURI;
+  readonly attribute DOMString compatMode;
+  readonly attribute DOMString characterSet;
+  readonly attribute DOMString charset; // legacy alias of .characterSet
+  readonly attribute DOMString inputEncoding; // legacy alias of .characterSet
+  readonly attribute DOMString contentType;
+
+  readonly attribute DocumentType? doctype;
+  readonly attribute Element? documentElement;
+  HTMLCollection getElementsByTagName(DOMString qualifiedName
+);
+  HTMLCollection getElementsByTagNameNS(DOMString? namespace
+, DOMString localName
+);
+  HTMLCollection getElementsByClassName(DOMString classNames
+);
+
+  [CEReactions, NewObject] Element createElement(DOMString localName
+, optional (DOMString or ElementCreationOptions) options
+ = {});
+  [CEReactions, NewObject] Element createElementNS(DOMString? namespace
+, DOMString qualifiedName
+, optional (DOMString or ElementCreationOptions) options
+ = {});
+  [NewObject] DocumentFragment createDocumentFragment();
+  [NewObject] Text createTextNode(DOMString data
+);
+  [NewObject] CDATASection createCDATASection(DOMString data
+);
+  [NewObject] Comment createComment(DOMString data
+);
+  [NewObject] ProcessingInstruction createProcessingInstruction(DOMString target
+, DOMString data
+);
+
+  [CEReactions, NewObject] Node importNode(Node node
+, optional boolean deep
+ = false);
+  [CEReactions] Node adoptNode(Node node
+);
+
+  [NewObject] Attr createAttribute(DOMString localName
+);
+  [NewObject] Attr createAttributeNS(DOMString? namespace
+, DOMString qualifiedName
+);
+
+  [NewObject] Event createEvent(DOMString interface
+); // legacy
+
+  [NewObject] Range createRange();
+
+  // NodeFilter.SHOW_ALL = 0xFFFFFFFF
+  [NewObject] NodeIterator createNodeIterator(Node root
+, optional unsigned long whatToShow
+ = 0xFFFFFFFF, optional NodeFilter? filter
+ = null);
+  [NewObject] TreeWalker createTreeWalker(Node root
+, optional unsigned long whatToShow
+ = 0xFFFFFFFF, optional NodeFilter? filter
+ = null);
+};
+
+[Exposed=Window]
+interface XMLDocument : Document {};
+
+dictionary ElementCreationOptions {
+  DOMString is;
+};
+
+document = new Document()
+    Returns a new document. 
+document . implementation
+    Returns document’s DOMImplementation object. 
+document . URL
+document . documentURI
+    Returns document’s URL. 
+document . compatMode
+    Returns the string "BackCompat" if document’s mode is "quirks"; otherwise "CSS1Compat". 
+document . characterSet
+    Returns document’s encoding. 
+
+document . contentType
+    Returns document’s content type. 
+
+The new Document() constructor steps are to set this’s origin to the origin of current global object’s associated Document. [HTML]
+
+Unlike createDocument(), this constructor does not return an XMLDocument object, but a document (Document object).
+
+The implementation getter steps are to return the DOMImplementation object that is associated with this.
+
+The URL and documentURI getter steps are to return this’s URL, serialized.
+
+The compatMode getter steps are to return "BackCompat" if this’s mode is "quirks"; otherwise "CSS1Compat".
+
+The characterSet, charset, and inputEncoding getter steps are to return this’s encoding’s name.
+
+The contentType getter steps are to return this’s content type.
+
+document . doctype
+    Returns the doctype or null if there is none. 
+document . documentElement
+    Returns the document element. 
+collection = document . getElementsByTagName(qualifiedName)
+
+    If qualifiedName is "*" returns a HTMLCollection of all descendant elements.
+
+    Otherwise, returns a HTMLCollection of all descendant elements whose qualified name is qualifiedName. (Matches case-insensitively against elements in the HTML namespace within an HTML document.)
+collection = document . getElementsByTagNameNS(namespace, localName)
+    If namespace and localName are "*" returns a HTMLCollection of all descendant elements.
+
+    If only namespace is "*" returns a HTMLCollection of all descendant elements whose local name is localName.
+
+    If only localName is "*" returns a HTMLCollection of all descendant elements whose namespace is namespace.
+
+    Otherwise, returns a HTMLCollection of all descendant elements whose namespace is namespace and local name is localName.
+collection = document . getElementsByClassName(classNames)
+
+collection = element . getElementsByClassName(classNames)
+    Returns a HTMLCollection of the elements in the object on which the method was invoked (a document or an element) that have all the classes given by classNames. The classNames argument is interpreted as a space-separated list of classes. 
+
+The doctype getter steps are to return the child of this that is a doctype; otherwise null.
+
+The documentElement getter steps are to return this’s document element.
+
+The getElementsByTagName(qualifiedName) method steps are to return the list of elements with qualified name qualifiedName for this.
+
+Thus, in an HTML document, document.getElementsByTagName("FOO") will match <FOO> elements that are not in the HTML namespace, and <foo> elements that are in the HTML namespace, but not <FOO> elements that are in the HTML namespace.
+
+The getElementsByTagNameNS(namespace, localName) method steps are to return the list of elements with namespace namespace and local name localName for this.
+
+The getElementsByClassName(classNames) method steps are to return the list of elements with class names classNames for this.
+Given the following XHTML fragment:
+
+<div id="example">
+  <p id="p1" class="aaa bbb"/>
+  <p id="p2" class="aaa ccc"/>
+  <p id="p3" class="bbb ccc"/>
+</div>
+
+A call to document.getElementById("example").getElementsByClassName("aaa") would return a HTMLCollection with the two paragraphs p1 and p2 in it.
+
+A call to getElementsByClassName("ccc bbb") would only return one node, however, namely p3. A call to document.getElementById("example").getElementsByClassName("bbb  ccc ") would return the same thing.
+
+A call to getElementsByClassName("aaa,bbb") would return no nodes; none of the elements above are in the aaa,bbb class.
+
+element = document . createElement(localName [, options])
+
+    Returns an element with localName as local name (if document is an HTML document, localName gets lowercased). The element’s namespace is the HTML namespace when document is an HTML document or document’s content type is "application/xhtml+xml"; otherwise null.
+
+    If localName does not match the Name production an "InvalidCharacterError" DOMException will be thrown.
+
+    When supplied, options’s is can be used to create a customized built-in element.
+element = document . createElementNS(namespace, qualifiedName [, options])
+
+    Returns an element with namespace namespace. Its namespace prefix will be everything before ":" (U+003E) in qualifiedName or null. Its local name will be everything after ":" (U+003E) in qualifiedName or qualifiedName.
+
+    If qualifiedName does not match the QName production an "InvalidCharacterError" DOMException will be thrown.
+
+    If one of the following conditions is true a "NamespaceError" DOMException will be thrown:
+
+        Namespace prefix is not null and namespace is the empty string.
+        Namespace prefix is "xml" and namespace is not the XML namespace.
+        qualifiedName or namespace prefix is "xmlns" and namespace is not the XMLNS namespace.
+        namespace is the XMLNS namespace and neither qualifiedName nor namespace prefix is "xmlns". 
+
+    When supplied, options’s is can be used to create a customized built-in element.
+documentFragment = document . createDocumentFragment()
+    Returns a DocumentFragment node. 
+text = document . createTextNode(data)
+    Returns a Text node whose data is data. 
+text = document . createCDATASection(data)
+    Returns a CDATASection node whose data is data. 
+comment = document . createComment(data)
+    Returns a Comment node whose data is data. 
+
+processingInstruction = document . createProcessingInstruction(target, data)
+    Returns a ProcessingInstruction node whose target is target and data is data. If target does not match the Name production an "InvalidCharacterError" DOMException will be thrown. If data contains "?>" an "InvalidCharacterError" DOMException will be thrown. 
+
+The element interface for any name and namespace is Element, unless stated otherwise.
+
+The HTML Standard will, e.g., define that for html and the HTML namespace, the HTMLHtmlElement interface is used. [HTML]
+
+The createElement(localName, options) method steps are:
+
+    If localName does not match the Name production, then throw an "InvalidCharacterError" DOMException.
+
+    If this is an HTML document, then set localName to localName in ASCII lowercase.
+
+    Let is be null.
+
+    If options is a dictionary and options["is"] exists, then set is to it.
+
+    Let namespace be the HTML namespace, if this is an HTML document or this’s content type is "application/xhtml+xml"; otherwise null.
+
+    Return the result of creating an element given this, localName, namespace, null, is, and with the synchronous custom elements flag set.
+
+The internal createElementNS steps, given document, namespace, qualifiedName, and options, are as follows:
+
+    Let namespace, prefix, and localName be the result of passing namespace and qualifiedName to validate and extract.
+
+    Let is be null.
+
+    If options is a dictionary and options["is"] exists, then set is to it.
+
+    Return the result of creating an element given document, localName, namespace, prefix, is, and with the synchronous custom elements flag set.
+
+The createElementNS(namespace, qualifiedName, options) method steps are to return the result of running the internal createElementNS steps, given this, namespace, qualifiedName, and options.
+
+createElement() and createElementNS()'s options parameter is allowed to be a string for web compatibility.
+
+The createDocumentFragment() method steps are to return a new DocumentFragment node whose node document is this.
+
+The createTextNode(data) method steps are to return a new Text node whose data is data and node document is this.
+
+No check is performed that data consists of characters that match the Char production.
+
+The createCDATASection(data) method steps are:
+
+    If this is an HTML document, then throw a "NotSupportedError" DOMException.
+
+    If data contains the string "]]>", then throw an "InvalidCharacterError" DOMException.
+
+    Return a new CDATASection node with its data set to data and node document set to this.
+
+The createComment(data) method steps are to return a new Comment node whose data is data and node document is this.
+
+No check is performed that data consists of characters that match the Char production or that it contains two adjacent hyphens or ends with a hyphen.
+
+The createProcessingInstruction(target, data) method steps are:
+
+    If target does not match the Name production, then throw an "InvalidCharacterError" DOMException.
+    If data contains the string "?>", then throw an "InvalidCharacterError" DOMException.
+    Return a new ProcessingInstruction node, with target set to target, data set to data, and node document set to this. 
+
+No check is performed that target contains "xml" or ":", or that data contains characters that match the Char production.
+
+clone = document . importNode(node [, deep = false])
+    Returns a copy of node. If deep is true, the copy also includes the node’s descendants.
+
+    If node is a document or a shadow root, throws a "NotSupportedError" DOMException.
+
+node = document . adoptNode(node)
+    Moves node from another document and returns it.
+
+    If node is a document, throws a "NotSupportedError" DOMException or, if node is a shadow root, throws a "HierarchyRequestError" DOMException.
+
+The importNode(node, deep) method steps are:
+
+    If node is a document or shadow root, then throw a "NotSupportedError" DOMException.
+
+    Return a clone of node, with this and the clone children flag set if deep is true.
+
+Specifications may define adopting steps for all or some nodes. The algorithm is passed node and oldDocument, as indicated in the adopt algorithm.
+
+To adopt a node into a document, run these steps:
+
+    Let oldDocument be node’s node document.
+
+    If node’s parent is non-null, then remove node.
+
+    If document is not oldDocument, then:
+
+        For each inclusiveDescendant in node’s shadow-including inclusive descendants:
+
+            Set inclusiveDescendant’s node document to document.
+
+            If inclusiveDescendant is an element, then set the node document of each attribute in inclusiveDescendant’s attribute list to document.
+
+        For each inclusiveDescendant in node’s shadow-including inclusive descendants that is custom, enqueue a custom element callback reaction with inclusiveDescendant, callback name "adoptedCallback", and an argument list containing oldDocument and document.
+
+        For each inclusiveDescendant in node’s shadow-including inclusive descendants, in shadow-including tree order, run the adopting steps with inclusiveDescendant and oldDocument.
+
+The adoptNode(node) method steps are:
+
+    If node is a document, then throw a "NotSupportedError" DOMException.
+
+    If node is a shadow root, then throw a "HierarchyRequestError" DOMException.
+
+    If node is a DocumentFragment node whose host is non-null, then return.
+
+    Adopt node into this.
+
+    Return node.
+
+The createAttribute(localName) method steps are:
+
+    If localName does not match the Name production in XML, then throw an "InvalidCharacterError" DOMException.
+    If this is an HTML document, then set localName to localName in ASCII lowercase.
+    Return a new attribute whose local name is localName and node document is this. 
+
+The createAttributeNS(namespace, qualifiedName) method steps are:
+
+    Let namespace, prefix, and localName be the result of passing namespace and qualifiedName to validate and extract.
+
+    Return a new attribute whose namespace is namespace, namespace prefix is prefix, local name is localName, and node document is this.
+
+The createEvent(interface) method steps are:
+
+    Let constructor be null.
+
+    If interface is an ASCII case-insensitive match for any of the strings in the first column in the following table, then set constructor to the interface in the second column on the same row as the matching string:
+    String 	Interface 	Notes
+    "beforeunloadevent" 	BeforeUnloadEvent 	[HTML]
+    "compositionevent" 	CompositionEvent 	[UIEVENTS]
+    "customevent" 	CustomEvent 	
+    "devicemotionevent" 	DeviceMotionEvent 	[DEVICE-ORIENTATION]
+    "deviceorientationevent" 	DeviceOrientationEvent
+    "dragevent" 	DragEvent 	[HTML]
+    "event" 	Event 	
+    "events"
+    "focusevent" 	FocusEvent 	[UIEVENTS]
+    "hashchangeevent" 	HashChangeEvent 	[HTML]
+    "htmlevents" 	Event 	
+    "keyboardevent" 	KeyboardEvent 	[UIEVENTS]
+    "messageevent" 	MessageEvent 	[HTML]
+    "mouseevent" 	MouseEvent 	[UIEVENTS]
+    "mouseevents"
+    "storageevent" 	StorageEvent 	[HTML]
+    "svgevents" 	Event 	
+    "textevent" 	CompositionEvent 	[UIEVENTS]
+    "touchevent" 	TouchEvent 	[TOUCH-EVENTS]
+    "uievent" 	UIEvent 	[UIEVENTS]
+    "uievents"
+
+    If constructor is null, then throw a "NotSupportedError" DOMException.
+
+    If the interface indicated by constructor is not exposed on the relevant global object of this, then throw a "NotSupportedError" DOMException.
+
+    Typically user agents disable support for touch events in some configurations, in which case this clause would be triggered for the interface TouchEvent.
+
+    Let event be the result of creating an event given constructor.
+
+    Initialize event’s type attribute to the empty string.
+
+    Initialize event’s timeStamp attribute to the result of calling current high resolution time with this’s relevant global object.
+
+    Initialize event’s isTrusted attribute to false.
+
+    Unset event’s initialized flag.
+
+    Return event.

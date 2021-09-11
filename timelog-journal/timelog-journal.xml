@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<timelog-journal>
+    <journal-entry>
+        <timelog></timelog>
+        <redundant-ref>
+            <bak-timestamp-hash></bak-timestamp-hash>
+        </redundant-ref>
+    </journal-entry>
+    <timelog></timelog>
+</timelog-journal>

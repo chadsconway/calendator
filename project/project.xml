@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+    <title></title>
+    <description></description>
+    <linkid></linkid>
+    <startdate></startdate>
+    <enddate></enddate>
+    <active></active>
+    <archived></archived>
+    <upcoming></upcoming>
+    <estimated-startdate></estimated-startdate>
+    <estimated-enddate></estimated-enddate>
+    <estimated-hours></estimated-hours>
+    <actual-startdate></actual-startdate>
+    <actual-enddate></actual-enddate>
+    <actual-hours>
+        <punchcard>
+            <title></title>
+            <linkid></linkid>
+        </punchcard>
+    </actual-hours>
+    <summary></summary>
+    <estimated-income></estimated-income>
+    <actual-income></actual-income>
+    <documents>
+        <document>
+            <title></title>
+            <linkid></linkid>
+        </document>
+    </documents>
+    <features>
+        <feature>
+            <title></title>
+            <linkid></linkid>
+            <punchlist>
+                <title></title>
+                <linkid></linkid>
+            </punchlist>
+            <tasks>
+                <task>
+                    <title></title>
+                    <linkid></linkid>
+                </task>
+            </tasks>
+        </feature>        
+    </features>
+
+
+</project>

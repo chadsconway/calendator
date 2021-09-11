@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<timeclockpunchcard>
+    <title></title>
+    <scopes></scopes>
+    <linkid></linkid>
+    <timelog-entries>
+        <markers>
+            <linkid></linkid>
+        </markers>
+        <matched-sets>
+            <punchin-timelog></punchin-timelog>
+            <punchout-timelog></punchout-timelog>
+        </matched-sets>
+    </timelog-entries>
+</timeclockpunchcard>
