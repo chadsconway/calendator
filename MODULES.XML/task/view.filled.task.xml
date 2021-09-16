@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="task.xslt"?>
+<task>
+    <tasktitle></tasktitle>
+    <linkid></linkid>
+    <projectID></projectID>
+    <projectTitle></projectTitle>
+
+<linkid> 5926cb4d-6c7e-4a71-b67d-083806a71a4f </linkid>
+<title>  xxx </title>
+<projectID>  xxx </projectID>
+<projectTitle>  xxx </projectTitle>
+<punchlistID>  xxx </punchlistID>
+<est_hours>  xxx </est_hours>
+<est_startdate>  xxx </est_startdate>
+<est_enddate>  xxx </est_enddate>
+<actual_startdate>  xxx </actual_startdate>
+<actual_enddate>  xxx </actual_enddate>
+<featureID>  xxx </featureID>
+<progress>  xxx </progress>
+<timesheetID>  xxx </timesheetID>
+<actual_hours>  xxx </actual_hours>
+<x_1>  xxx </x_1>
+<x_2>  xxx </x_2> 
+</task>

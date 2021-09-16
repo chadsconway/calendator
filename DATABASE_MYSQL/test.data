@@ -1,0 +1,75 @@
+INSERT INTO TASK
+
+linkid = aa97ad52-9d20-4efb-aa17-0b685258aa75
+title = 'some task title'
+projectId = c6e947db-f434-42c4-bc50-831f89fea31d
+projectTitle = "Project TitleBlock"
+punchlistID = 3258be33-db16-4972-8fbd-67d3f306c7f3
+est_hours = 20
+est_startdate = 2020-10-10
+est_enddate = 2020-20-11
+actual_startdate = 2020-11-11
+actual_enddate = 2020-11-14
+featureId = fad01aac-756e-4f8a-b68c-0c055a5f902a
+progress = 50
+timesheetID = 7068ab49-a126-4ed9-9ae5-1b62a44c1728
+
+punchcards = 82b05e80-e55b-4d27-8f80-abe1170019f2
+---------------------------------------------------------------------------
+INSERT INTO task
+
+INSERT INTO `task`(`linkid`, `title`, `projectID`, `projectTitle`, `punchlistID`, `est_hours`, `est_startdate`, `est_enddate`, `actual_startdate`, `actual_enddate`, `featureID`, `progress`, `timesheetID`, `actual_hours`, `x_1`, `x_2`) VALUES ('aa97ad52-9d20-4efb-aa17-0b685258aa75','Some Task Title','c6e947db-f434-42c4-bc50-831f89fea31d','Project TitleBlock','3258be33-db16-4972-8fbd-67d3f306c7f3', 20,'2021-10-10','2020-10-11','2020-11-11','2020-11-14','fad01aac-756e-4f8a-b68c-0c055a5f902a',50,'7068ab49-a126-4ed9-9ae5-1b62a44c1728','25',null,null); 
+
+---------------------------------------------------------------------------
+
+INSERT INTO timesheet
+
+linkid = 7068ab49-a126-4ed9-9ae5-1b62a44c1728
+title = 'Timesheet 001'
+projectID = c6e947db-f434-42c4-bc50-831f89fea31d
+clockRecordIDs = '['4b227083-1207-4e8f-bef6-5729cf3d5ad1',
+'7a576345-d489-4aa5-827b-8e86223f71f8',
+'128a2db3-ee33-46b3-b3e8-f2564f9cc267']',
+featureId = fad01aac-756e-4f8a-b68c-0c055a5f902a
+punchlistID = 40097c73-5694-4bff-80ac-fab2e0da11dc
+
+
+INSERT INTO 'timesheet' 
+'7068ab49-a126-4ed9-9ae5-1b62a44c1728', 'Timesheet 001', 'c6e947db-f434-42c4-bc50-831f89fea31d',
+'['4b227083-1207-4e8f-bef6-5729cf3d5ad1',
+'7a576345-d489-4aa5-827b-8e86223f71f8',
+'128a2db3-ee33-46b3-b3e8-f2564f9cc267']', 
+'fad01aac-756e-4f8a-b68c-0c055a5f902a',
+'40097c73-5694-4bff-80ac-fab2e0da11dc'
+
+INSERT INTO `timesheet`(`linkid`, `title`, `projectID`, `clockRecordIDs`, `featureID`, `punchlistID`) VALUES ('7068ab49-a126-4ed9-9ae5-1b62a44c1728', 'Timesheet 001', 'c6e947db-f434-42c4-bc50-831f89fea31d',
+'["4b227083-1207-4e8f-bef6-5729cf3d5ad1", "7a576345-d489-4aa5-827b-8e86223f71f8", "128a2db3-ee33-46b3-b3e8-f2564f9cc267"]', 'fad01aac-756e-4f8a-b68c-0c055a5f902a',
+'40097c73-5694-4bff-80ac-fab2e0da11dc')
+
+---------------------------------------------------------------------------
+
+INSERT INTO `punchlist`
+
+INSERT INTO `punchlist`(`linkid`, `title`, `description`, `project`, `feature`, `tasks`) VALUES ('40097c73-5694-4bff-80ac-fab2e0da11dc','Punchlist Title 1','This is a description of the punchlist','c6e947db-f434-42c4-bc50-831f89fea31d','fad01aac-756e-4f8a-b68c-0c055a5f902a','["aa97ad52-9d20-4efb-aa17-0b685258aa75"]')
+
+---------------------------------------------------------------------------
+
+INSERT INTO 'project'
+
+INSERT INTO `project`(`linkid`, `title`, `description`, `est_startdate`, `est_enddate`, `est_hours`, `actual_startdate`, `actual_enddate`, `actual_hours`, `est_income`, `actual_income`, `features`, `tasks`, `timesheets`, `punchcards`, `documents`, `bid_entered`, `bid_won`, `flags`, `x_1`, `x_2`, `x_3`, `x_4`, `x_5`, `x_6`) VALUES ('[value-1]','[value-2]','[value-3]','[value-4]','[value-5]','[value-6]','[value-7]','[value-8]','[value-9]','[value-10]','[value-11]','[value-12]','[value-13]','[value-14]','[value-15]','[value-16]','[value-17]','[value-18]','[value-19]','[value-20]','[value-21]','[value-22]','[value-23]','[value-24]','[value-25]')
+
+INSERT INTO `project`(`linkid`, `title`, `description`, `est_startdate`, `est_enddate`, `est_hours`, `actual_startdate`, `actual_enddate`, `actual_hours`, `est_income`, `actual_income`, `features`, `tasks`, `timesheets`, `punchcards`, `documents`, `bid_entered`, `bid_won`, `flags`) VALUES ('c6e947db-f434-42c4-bc50-831f89fea31d','project title','This is a description of the project','2020-01-01','2020-01-10',100,'2020-02-01','2020-02-10',120,2000,2000,'["fad01aac-756e-4f8a-b68c-0c055a5f902a"]','["aa97ad52-9d20-4efb-aa17-0b685258aa75"]','["7068ab49-a126-4ed9-9ae5-1b62a44c1728"]','["82b05e80-e55b-4d27-8f80-abe1170019f2"]', '{"proposal": "Proposal #0303"}',true, true,0011001100110011)
+
+---------------------------------------------------------------------------
+INSERT INTO `masterlinklog`
+
+INSERT INTO `masterlinklog`(`masterID`, `projectID`, `featureID`, `punchlistID`, `taskID`, `yearID`, `dayID`, `blockID`, `eventID`, `timesheetID`, `x_1`, `layout`, `timestamp`, `calendatorLogID`) VALUES ('[value-1]','[value-2]','[value-3]','[value-4]','[value-5]','[value-6]','[value-7]','[value-8]','[value-9]','[value-10]','[value-11]','[value-12]','[value-13]','[value-14]')
+
+
+INSERT INTO `masterlinklog`(`masterID`, `projectID`) VALUES ('73681e2e-a651-4b14-97f1-96c9efafbaca','c6e947db-f434-42c4-bc50-831f89fea31d')
+
+
+---------------------------------------------------------------------------
+INSERT INTO `notator`
+
+INSERT INTO `notator`(`linkid`, `title`, `description`, `prioriColor`, `doneBy`, `doneByTime`, `priority`, `dependencies`, `preReqs`) VALUES ('e063fe51-9d4d-4397-8f1f-325603e5a72f','Note Title','Note description area','#00ff00','2021-10-09','12:45:00','HIGH','{ "dependencies": ["one", "two", "three"]}','{ "preReq1": "put on sides", "preReq2": "attach front"}')

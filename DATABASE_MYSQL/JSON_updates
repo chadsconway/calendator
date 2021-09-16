@@ -1,0 +1,28 @@
+Partial UPDATES:
+can't be larger than current JSON object
+must use one of these:
+JSON_SET(),
+JSON_REPLACE(),
+JSON_REMOVE()
+Better off retrieving value and then deleting row and inserting a new row?
+
+Creating JSON Values
+
+A JSON array contains a list of values separated by commas and enclosed within [ and ] characters:
+
+["abc", 10, null, true, false]
+
+A JSON object contains a set of key-value pairs separated by commas and enclosed within { and } characters:
+
+{"k1": "value", "k2": 10}
+
+As the examples illustrate, JSON arrays and objects can contain scalar values that are strings or numbers, the JSON null literal, or the JSON boolean true or false literals. Keys in JSON objects must be strings. Temporal (date, time, or datetime) scalar values are also permitted:
+
+["12:18:29.000000", "2015-07-29", "2015-07-29 12:18:29.000000"]
+
+Nesting is permitted within JSON array elements and JSON object key values:
+
+[99, {"id": "HK500", "cost": 75.99}, ["hot", "cold"]]
+{"k1": "value", "k2": [10, 20]}
+
+You can also obtain JSON values from a number of functions supplied by MySQL for this purpose (see Section 12.18.2, “Functions That Create JSON Values”) as well as by casting values of other types to the JSON type using CAST(value AS JSON) (see Converting between JSON and non-JSON values). The next several paragraphs describe how MySQL handles JSON values provided as input. 

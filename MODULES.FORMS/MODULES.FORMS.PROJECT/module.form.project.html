@@ -1,0 +1,174 @@
+<style></style>
+<link rel="stylesheet" href="./module.forms.project.css" />
+
+<h1>Project Input Form:</h1>
+<form action="POST" class="axr-font-all-round-gothic--xlig">
+  <fieldset>
+    <legend class="axr-font-all-round-gothic--xlig axr-font-size-30">
+      Project Details
+    </legend>
+    <table>
+      <tr>
+        <th>Field:</th>
+        <th>Data:</th>
+      </tr>
+      <tr>
+        <td>
+          <label for="linkid">linkid(uuidv4)*</label>
+        </td>
+        <td>
+          <input type="text" name="linkid" />
+        </td>
+        <td>
+          <tr>
+            <td>
+              <label for="title">title* </label>
+            </td>
+            <td>
+              <input type="text" name="title" />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label for="descsription">description</label>
+            </td>
+            <td>
+              <input type="text" name="description" />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label for="features">features (json)</label>
+            </td>
+            <td>
+              <input type="json" name="features" />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label for="tasks">tasks (json)</label>
+            </td>
+            <td>
+              <input type="json" name="tasks" />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label for="timesheets">timesheets (json)</label>
+            </td>
+            <td>
+              <input type="json" name="timesheets" />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label for="documents">documents (json)</label>
+            </td>
+            <td>
+              <input type="json" name="documents" />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label for="big_entered">big_entered (boolean)</label>
+            </td>
+            <td>
+              <input type="boolean" name="big_entered" />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label for="bid_won   ">bid_won (boolean)</label>
+            </td>
+            <td>
+              <input type="boolean" name="bid_won   " />
+            </td>
+          </tr>
+        </td>
+      </tr>
+    </table>
+  </fieldset>
+  <fieldset>
+    <legend>Estimated Dates</legend>
+    <table>
+      <tr>
+        <th>Field:</th>
+        <th>Data:</th>
+      </tr>
+      <tr>
+        <td>
+          <label for="est_startdate">Est_startdate</label>
+        </td>
+        <td>
+          <input type="date" name="est_startdate" />
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label for="est_enddate">est_enddate (date)</label>
+        </td>
+        <td>
+          <input type="date" name="est_enddate" />
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label for="est_hours">est_hours (number)</label>
+        </td>
+        <td>
+          <input type="number" name="est_hours" />
+        </td>
+      </tr>
+    </table>
+  </fieldset>
+  <fieldset>
+    <legend>Actual Dates</legend>
+    <table>
+      <tr>
+        <th>Field:</th>
+        <th>Data:</th>
+      </tr>
+      <tr>
+        <td>
+          <label for="actual_startdate">actual_startdate (date)</label>
+        </td>
+        <td>
+          <input type="date" name="actual_startdate" />
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label for="actual_enddate">actual_enddate (date)</label>
+        </td>
+        <td>
+          <input type="date" name="actual_enddate" />
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label for="actual_hours">actual_hours (number)</label>
+        </td>
+        <td>
+          <input type="number" name="actual_hours" />
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label for="est_income">est_income (number)</label>
+        </td>
+        <td>
+          <input type="number" name="est_income" />
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label for="actual_income">actual_income (number)</label>
+        </td>
+        <td>
+          <input type="number" name="actual_income" />
+        </td>
+      </tr>
+    </table>
+  </fieldset>
+  <input class="submit-button" type="submit" value="submit" />
+</form>

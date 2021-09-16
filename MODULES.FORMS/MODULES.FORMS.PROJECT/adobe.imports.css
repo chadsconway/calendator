@@ -1,0 +1,39 @@
+/*^ Project DEV_FONT_PACKS  */
+@import url("https://use.typekit.net/rfg3iim.css");
+
+/*^ API TOKEN f948c83198a67d4e0cdd7fac89e59c26335a09e3 */
+.axr-font-regulator {
+  font-family: "Regulator Nova";
+}
+.axr-font-weight--xlight {
+  font-weight: Extra Light;
+}
+.axr-font-weight--light {
+  font-weight: Light;
+}
+.axr-font-weight--medium {
+  font-weight: Medium;
+}
+.axr-font-weight--dbold {
+  font-weight: Demi_Bold;
+}
+.axr-font-weight--bold {
+  font-weight: Bold;
+}
+.axr-font-weight--cameo {
+  font-weight: Cameo;
+}
+
+.axr-font-all-round-gothic--xlig {
+  font-family: "All Round Gothic";
+  font-weight: "XLig";
+}
+.axr-font-size-50 {
+  font-size: 50px;
+}
+.axr-font-size-40 {
+  font-size: 40px;
+}
+.axr-font-size-30 {
+  font-size: 30px;
+}

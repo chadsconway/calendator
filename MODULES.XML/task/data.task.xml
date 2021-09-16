@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="task.xslt"?>
+<database name="calendator">
+    <table name="task">
+        <column name="linkid"></column>
+        <column name="title"></column>
+        <column name="projectID"></column>
+        <column name="projectTitle"></column>
+        <column name="punchlistID"></column>
+		<column name="est_hours"></column>
+		<column name="est_startdate"></column>
+		<column name="est_enddate"></column>
+		<column name="actual_startdate"></column>
+		<column name="actual_enddate"></column>
+		<column name="featureID"></column>
+		<column name="progress"></column>
+		<column name="timesheetID"></column>
+		<column name="actual_hours"></column>
+		<column name="x_1"></column>
+		<column name="x_2"></column> 
+    </table>
+</database>

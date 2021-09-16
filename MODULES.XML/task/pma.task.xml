@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+- phpMyAdmin XML Dump
+- version 5.1.1
+- https://www.phpmyadmin.net
+-
+- Host: 127.0.0.1
+- Generation Time: Sep 12, 2021 at 09:29 PM
+- Server version: 10.4.20-MariaDB
+- PHP Version: 8.0.9
+-->
+
+<pma_xml_export version="1.0" xmlns:pma="https://www.phpmyadmin.net/some_doc_url/">
+    <!--
+    - Structure schemas
+    -->
+    <pma:structure_schemas>
+        <pma:database name="calendator" collation="utf8mb4_general_ci" charset="utf8mb4">
+            <pma:table name="task">
+                CREATE TABLE `task` (
+                  `linkid` varchar(36) NOT NULL,
+                  `title` int(11) NOT NULL,
+                  `projectID` varchar(36) DEFAULT NULL,
+                  `projectTitle` mediumtext DEFAULT NULL,
+                  `punchlistID` varchar(36) DEFAULT NULL,
+                  `est_hours` int(11) DEFAULT NULL,
+                  `est_startdate` date DEFAULT NULL,
+                  `est_enddate` date DEFAULT NULL,
+                  `actual_startdate` date DEFAULT NULL,
+                  `actual_enddate` date DEFAULT NULL,
+                  `featureID` varchar(36) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin DEFAULT NULL,
+                  `progress` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_bin DEFAULT NULL CHECK (json_valid(`progress`)),
+                  `timesheetID` varchar(36) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin DEFAULT NULL,
+                  `actual_hours` int(11) DEFAULT NULL,
+                  `x_1` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_bin DEFAULT NULL CHECK (json_valid(`x_1`)),
+                  `x_2` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_bin DEFAULT NULL CHECK (json_valid(`x_2`)),
+                  PRIMARY KEY (`linkid`),
+                  KEY `projectID` (`projectID`),
+                  KEY `featureID` (`featureID`),
+                  KEY `punchlistID` (`punchlistID`),
+                  KEY `timesheet` (`timesheetID`)
+                ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+            </pma:table>
+        </pma:database>
+    </pma:structure_schemas>
+
+    <!--
+    - Database: 'calendator'
+    -->
+    <database name="calendator">
+        <!-- Table task -->
+    </database>
+</pma_xml_export>

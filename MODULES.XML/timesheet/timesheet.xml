@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database name="calendator">
+    <table name="timesheet">
+		<column name="linkid"></column>
+		<column name="title"></column>
+		<column name="projectID"></column>
+		<column name="clockRecordIDs"></column>
+    </table>
+</database>

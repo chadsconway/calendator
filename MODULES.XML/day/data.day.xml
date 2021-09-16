@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="task.xslt"?>
+
+<database name="calendator">
+    <table name="day">
+<column name="linkid"></column>
+<column name="day"></column>
+<column name="year"></column>
+<column name="month"></column>
+<column name="events"></column>
+<column name="coding"></column>
+<column name="diary"></column>
+<column name="layout"></column>
+<column name="schedule"></column>
+<column name="reminders"></column>
+<column name="timelog"></column>
+<column name="interruptors"></column>
+    
+    </table>
+
+</database>

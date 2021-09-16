@@ -1,0 +1,41 @@
+@import url("./adobe.imports.css");
+form {
+  width: 450px;
+  border: 2px solid black;
+  line-height: 30px;
+  padding: 20px;
+}
+table {
+  border: 1px solid black;
+  padding: 10px;
+}
+legend {
+  font-size: 30px;
+}
+th {
+  padding: 10px;
+  font-size: 25px;
+  margin: 10px;
+}
+td {
+  font-size: 20px;
+}
+.submit-button {
+  display: inline-block;
+  background-color: darkgreen;
+  color: white;
+  font-size: 30px;
+  padding: 10px;
+  width: 100%;
+}
+input {
+  line-height: 30px;
+  font-size: 20px;
+}
+h1 {
+  font-size: 35px;
+  line-height: 40px;
+  margin: 0 auto;
+  font-family: "All Round Gothic";
+  display: block;
+}
